@@ -1,0 +1,88 @@
+
+*{
+    transition: .2s linear;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+    padding: 1% 1%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    border-bottom:.1rem solid black ;
+    padding-bottom: .2rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.icons div {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 2rem;
+}
+
+.icons div:hover {
+    color: orange;
+}
+
+.search-form {
+    position: absolute;
+    top: 115%;
+    right: 5%;
+    width: 40rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.search-form.active{
+    transform: scaleY(1);
+}
+
+.search-form input {
+    height: 100%;
+    width: 100%;
+    /* padding: 1.5rem; */
+}
+
+.search-form label {
+    cursor: pointer;
+    margin-right: 1.5rem;
+    display: none;
+}
+
+.search-form label:hover {
+    color: orange;
+}
+
+.navbar .cart-items-container {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: calc(100vh - 3.5rem);
+    width: 35rem;
+    border:1px solid black;
+    background: rgb(220, 188, 129);
+    padding: 0 1.5rem;
+}
+
+.navbar .cart-items-container.active {
+    right: 0;
+}
