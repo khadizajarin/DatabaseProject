@@ -1,6 +1,8 @@
 <?php 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+if(isset($_POST['submit'])){
 //include('config/bd_connect.php')
+
 $errors = array( 'email'=> ' ','password'=>' ');
 $email= $password = ' ';
 $email  = $_POST["email"];
@@ -8,7 +10,7 @@ $password = $_POST["password"];
  
  //connect to database
  $conn = mysqli_connect("localhost", "roza", "khadizajarin","artive");
-
+session_start();
  //check connection
  if(!$conn){
      echo 'Connection error:' . mysqli_connect_error();
@@ -20,22 +22,31 @@ $password = $_POST["password"];
     if($stmt_result -> num_rows > 0){
         $data = $stmt_result-> fetch_assoc();
         if($data['password'] === $password) {
-             header('Location:homepage.php ');
+            session_start();
+            $_SESSION["password"] = $password;
+            $_SESSION["email"] = $email;
+            $_SESSION["loggedin"] = true;
+            header('Location:homepage.php ');
         }
     else{
             echo "Invalid password";
         }
     }
 }
+
 }
+
     
- 
 
 
-     /*$email= $password  = ' ';
-     $err = " ";
+
+/*$errors = array( 'email'=> ' ','password'=>' ');
+$email= $password = ' ';
+include('config/bd_connect.php');
+     session_start();
     //getting all values from the HTML form
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+
         if(isset($_SESSION['email']))
         {
             header("location: homepage.php");
@@ -64,7 +75,7 @@ $password = $_POST["password"];
         if(mysqli_stmt_execute($stmt)){
             mysqli_stmt_store_result($stmt);
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    mysqli_stmt_bind_result($stmt,$id, $email,$password);
+                    mysqli_stmt_bind_result($stmt, $email,$password);
                     if(mysqli_stmt_fetch($stmt)){
                             //this means user is allowed to login
                             session_start();
@@ -170,7 +181,7 @@ $password = $_POST["password"];
     <main>
         <!-- BANNER SECTION -->
         <section class="d-flex flex-column justify-content-center align-items-center"
-            style="background-image: url(images\backgrounds\background3.jpg); height: 100vh; width: 100%; background-size: cover;width: 100%;  background-position: center;">
+            style="background-image: url(background3.jpg); height: 100vh; width: 100%; background-size: cover;width: 100%;  background-position: center;">
 
             <section style="position:absolute; top: 40%; right: 3%; width: 50%; height: auto;">
                 <!-- FORM TITLE -->
@@ -180,7 +191,7 @@ $password = $_POST["password"];
     
                 <!-- FORM SECTION -->
                 <section class="me-sm-5">
-                    <form class="row" action="<?php echo $_SERVER['PHP_SELF'] ?>" method = "POST">
+                    <form class="row" action="homepage.php" method = "POST">
                         <div class="col-11 mb-2">
                             <label for="inputEmail4" class="form-label mb-0">Email</label>
                             <input type="email" class="form-control" id="inputEmail4" name = "email"
@@ -194,7 +205,7 @@ $password = $_POST["password"];
                                 required>
                         </div>
                         <div class="col-12 mt-4">
-                            <button type="submit" id="btn-login"
+                            <button type="submit" id="btn-login" name = "submit" value = "submit"
                                 style="background:transparent ; border: 2px solid; border-color: black; border-radius: 18px;"
                                 class="btn btn-primary text-dark px-5">Log in</button>
                         </div>

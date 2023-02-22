@@ -71,7 +71,7 @@
 
     <!-- BANNER SECTION -->
     <section class="d-flex flex-column justify-content-center align-items-center"
-      style="background-image:linear-gradient(rgba(146, 131, 131, 0.5),rgba(146, 131, 131, 0.5)), url(images\backgrounds\background3.jpg); height: 100vh;width: 100%; background-size: cover;width: 100%;  background-position: center;">
+      style="background-image:linear-gradient(rgba(146, 131, 131, 0.5),rgba(146, 131, 131, 0.5)), url(background3.jpg); height: 100vh;width: 100%; background-size: cover;width: 100%;  background-position: center;">
       <h1 class="fw-bold text-dark" style="font-size: 80px;">
         ArTive</h1>
 

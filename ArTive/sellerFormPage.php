@@ -1,10 +1,10 @@
 <?php
      include('config/bd_connect.php');
-
+    
      $fname =$lname= $mobile1= $mobile2= $email= $password = $address1 = $address2 = $city = ' ';
      $errors = array('fname'=> ' ','lname'=> ' ','mobile1'=> ' ',' mobile2'=> ' ', 'email'=> ' ','password'=>' ', 'address1'=> ' ', 'address2'=> ' ', 'city'=> ' ');
     //getting all values from the HTML form
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(isset($_POST['submit'])){
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $mobile1 = $_POST['mobile1'];
@@ -28,7 +28,7 @@
           else
           {
             $sql = ("INSERT INTO seller( fname ,lname, mobile1, mobile2, email, password ,address1, address2, city) VALUES ( '$fname','$lname' ,'$mobile1','$mobile2','$email','$password', '$address1', '$address2','$city')");
-            header("Location:homepage.php"); // ekhane homepage connect hbe
+            header("Location:sellerLoginPage.php"); 
             $rs = mysqli_query($conn, $sql);
             if($rs){
               echo "Entries added!";

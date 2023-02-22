@@ -92,7 +92,7 @@
 
         <!-- BANNER SECTION -->
         <section class="d-flex flex-column justify-content-center align-items-center"
-            style="background-image: url(images\backgrounds\background8.jpg); height: 100vh; width: 100%; background-size: cover;width: 100%;  background-position: center;">
+            style="background-image: url(background8.jpg); height: 100vh; width: 100%; background-size: cover;width: 100%;  background-position: center;">
 
 
             <section style="position:absolute; top: 25%; right: 2%; width: 50%; height: auto;">

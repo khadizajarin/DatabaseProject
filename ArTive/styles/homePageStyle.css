@@ -1,5 +1,5 @@
 *{
-    transition: .2s linear;
+    transition: .3s linear;
 }
 
 html {
@@ -75,13 +75,40 @@ a:hover{
     position: absolute;
     top: 100%;
     right: -100%;
-    height: calc(100vh - 3.5rem);
+    height: 100vh;
+    /* height: calc(100vh - 3.5rem); */
     width: 35rem;
-    border:1px solid black;
+    border:2px solid white;
     background: rgb(220, 188, 129);
     padding: 0 1.5rem;
 }
 
 .navbar .cart-items-container.active {
     right: 0;
+}
+
+.navbar .seller-profile-container{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    /* height:calc(100vh - 3.5rem) ; */
+    height:100vh;
+    width: 45%;
+    border:2px solid white;
+    background: rgb(220, 188, 129);
+    /* border:2px solid rgb(220, 188, 129);
+    background: white; */
+    padding: 0 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.navbar .seller-profile-container.active{
+    right: 0;
+}
+
+.navbar .seller-profile-container img{
+    margin-top: 12px;
+    height: 35%;
+    width: 50%;
 }
