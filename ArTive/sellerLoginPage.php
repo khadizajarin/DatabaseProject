@@ -21,8 +21,8 @@ session_start();
     $stmt_result = $stmt-> get_result();
     if($stmt_result -> num_rows > 0){
         $data = $stmt_result-> fetch_assoc();
-        if($data['password'] === $password) {
-            session_start();
+        if($data['password'] == $password) {
+            // session_start();
             $_SESSION["password"] = $password;
             $_SESSION["email"] = $email;
             $_SESSION["loggedin"] = true;
@@ -191,7 +191,7 @@ include('config/bd_connect.php');
     
                 <!-- FORM SECTION -->
                 <section class="me-sm-5">
-                    <form class="row" action="homepage.php" method = "POST">
+                    <form class="row" action="" method = "POST">
                         <div class="col-11 mb-2">
                             <label for="inputEmail4" class="form-label mb-0">Email</label>
                             <input type="email" class="form-control" id="inputEmail4" name = "email"

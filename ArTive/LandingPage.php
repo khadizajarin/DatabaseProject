@@ -74,6 +74,7 @@
       style="background-image:linear-gradient(rgba(146, 131, 131, 0.5),rgba(146, 131, 131, 0.5)), url(background3.jpg); height: 100vh;width: 100%; background-size: cover;width: 100%;  background-position: center;">
       <h1 class="fw-bold text-dark" style="font-size: 80px;">
         ArTive</h1>
+        <h5 class="text-dark mb-2" style="font-size: 18px">Art + Creative</h5>
 
       <div class="py-3 px-5 mb-2 bg-transparent border border-dark rounded-4">
         <a class="text-decoration-none text-dark" style="padding: 70px;" href="buyerFormPage.php">
